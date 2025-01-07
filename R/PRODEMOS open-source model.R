@@ -41,12 +41,12 @@ df.r.mortality <- data.frame(age=c(50:100), m_CVD=NA, m_oth=NA, f_CVD=NA, f_oth=
 
 # import tables
 ## life table
-df.r.lifetable <- as.data.frame(read.csv(file="data/lifetable_UK.csv"))
+df.r.lifetable <- as.data.frame(read.csv(file="data-raw/lifetable_UK.csv"))
 df.r.lifetable$rate <- df.r.lifetable$rate / 100000
 ## prevalence table
-df.prevalence <- as.data.frame(read.csv(file="data/prevalence.csv"))
+df.prevalence <- as.data.frame(read.csv(file="data-raw/prevalence.csv"))
 ## proportion death related to CVD by age and sex
-df.p.death_CVD <- as.data.frame(read.csv(file="data/proportion_death_CVD.csv"))
+df.p.death_CVD <- as.data.frame(read.csv(file="data-raw/proportion_death_CVD.csv"))
 
 # split risk
   # the health-economic model aims to simulate mortality rate in those without dementia and those with dementia (same for CHD and stroke)
