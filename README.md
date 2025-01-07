@@ -15,7 +15,7 @@ The branch "main" is for development and fune tuning before release, and is inte
 - Open R file named "PRODEMOS open-source model.R" in R (or RStudio)
 - Install `heemod` by running the code `install.packages("heemod")` in R (this code is located under the heading `# MANUAL PREPARATION #`; to activate the code remove the `#` at the beginning of the line).
 - Install `readxl` (same as previous). 
-- Set the working directory to the file path where the unzipped folder is stored (this code is located under the heading `# MANUAL PREPARATION #`; change the code manually or alternatively in RStudio go to the menu "Session" then "Set Working Directory" then "To Source File Location" (or to "Choose Directory..." and choose the location of the unzipped folder)).
+- Set the working directory to the file path where the unzipped folder is stored (this code is located under the heading `# MANUAL PREPARATION #`; change the code manually or alternatively in RStudio go to the menu "Session" then "Set Working Directory" then "Choose Directory..." and choose the location of the unzipped folder).
 - Run the code by sourcing it (in R go to the menu "File" then "Source R code..."; in RStudio go to the menu "Code" then "Source")
 - We recommend familiarizing with the description of the model using the details related to the releases described below.
 
