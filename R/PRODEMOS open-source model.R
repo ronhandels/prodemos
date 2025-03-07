@@ -16,7 +16,8 @@
 # install.packages("readxl") # remove '#' at beginning of the line and run once to install this package
 
 # set working directory
-setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
+#setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
+#setwd("~/GitHub/prodemos") # alternatively, when using GitHub one could use this to set the working directory
 
 
 
@@ -588,8 +589,10 @@ sum(counts_int[,c("count.atr","count.dem","count.chd","count.str","count.demchd"
 summary(res_mod_het)$sum_comb$res_values
 
 ## net health benefit
-summary(res_mod_het)$sum_comb$res_values$utility[1] - summary(res_mod_het)$sum_comb$res_values$cost[1] / 20000
-summary(res_mod_het)$sum_comb$res_values$utility[2] - summary(res_mod_het)$sum_comb$res_values$cost[2] / 20000
+nhb_soc <- summary(res_mod_het)$sum_comb$res_values$utility[1] - summary(res_mod_het)$sum_comb$res_values$cost[1] / 20000
+nhb_int <- summary(res_mod_het)$sum_comb$res_values$utility[2] - summary(res_mod_het)$sum_comb$res_values$cost[2] / 20000
+inhb <- nhb_int - nhb_soc
+print(inhb, digits=10) # -0.1903244151
 
 ## ICER
 print(format(summary(res_mod_het)$sum_comb$res_comp$.icer[2], digits=10)) # "249780.2897"
@@ -657,13 +660,13 @@ print(format(summary(res_mod_het)$sum_comb$res_comp$.icer[2], digits=10)) # "249
 # # compare state trace
 # ## soc
 # m.trace_r_hom_soc <- counts_soc
-# m.trace_e_hom_soc <- as.data.frame(read_excel(path="internal validation (2025-01-06)/statetrace_excel_soc heterogeneous.xlsx", col_names=TRUE))
+# m.trace_e_hom_soc <- as.data.frame(read_excel(path="D:/surfdrive virtual/PhD/PAPERS/PRODEMOS cost-utility/model excel/internal validation (2025-03-07)/statetrace_excel_soc heterogeneous.xlsx", col_names=TRUE))
 # m.trace_hom_soc_dif <- abs(m.trace_r_hom_soc[1:28,2:11] - m.trace_e_hom_soc[1:28,]) # compare only first 28 years because excel starting age 57 runs state trace up to age 101 (FYI: health-economic outcomes are run up to age 99) and R runs up to age 99 (=28 years)
 # format(m.trace_hom_soc_dif, digits=15)
 # print(range(m.trace_hom_soc_dif, na.rm=TRUE)) # should be 0 or very small number
 # ## int
 # m.trace_r_hom_int <- counts_int
-# m.trace_e_hom_int <- as.data.frame(read_excel(path="internal validation (2025-01-06)/statetrace_excel_int heterogeneous.xlsx", col_names=TRUE))
+# m.trace_e_hom_int <- as.data.frame(read_excel(path="D:/surfdrive virtual/PhD/PAPERS/PRODEMOS cost-utility/model excel/internal validation (2025-03-07)/statetrace_excel_int heterogeneous.xlsx", col_names=TRUE))
 # m.trace_hom_int_dif <- abs(m.trace_r_hom_int[1:28,2:11] - m.trace_e_hom_int[1:28,]) # compare only first 28 years because excel starting age 57 runs state trace up to age 101 (FYI: health-economic outcomes are run up to age 99) and R runs up to age 99 (=28 years)
 # format(m.trace_hom_int_dif, digits=15)
 # print(range(m.trace_hom_int_dif, na.rm=TRUE)) # should be 0 or very small number
