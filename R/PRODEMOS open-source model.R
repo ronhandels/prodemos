@@ -16,8 +16,13 @@
 # install.packages("readxl") # remove '#' at beginning of the line and run once to install this package
 
 # set working directory
+<<<<<<< Updated upstream
 #setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
 #setwd("~/GitHub/prodemos") # alternatively, when using GitHub one could use this to set the working directory
+=======
+setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
+setwd("~/GitHub/PRODEMOS") # if needed, change to the directory to the folder in which the R code and the life table folder is located
+>>>>>>> Stashed changes
 
 
 
