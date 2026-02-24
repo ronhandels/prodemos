@@ -1,28 +1,21 @@
 
 ######################################## README ########################################
 
-# Version 1.0
+# Version 1.0.0
+
 # For details see readme on https://www.github.com/ronhandels/prodemos
-# Developers original model: Ron Handels, Anders Wimo, Linus Jonsson
-# Developers R replication: Yunfei Li, Linus Jonsson, Ron Handels
-# PRODEMOS study collaborators: Ron Handels, Marieke Hoevenaar-Blom, Manshu Song, Carol Brayne, Eric Moll van Charante, Fiona E Matthews, Junfang Xu, Linus Jönsson, Nicola Coley, Rachael Brooks, Xuening Jian, Tingting Qin, Youxin Wang, Wei Wang, Edo Richard, Anders Wimo, PRODEMOS study group
 
 
 
-######################################## MANUAL PREPARATION ########################################
+######################################## INSTALLATION GUIDE ########################################
 
 # install packages
 # install.packages("heemod") # remove '#' at beginning of the line and run once to install this package
-# install.packages("readxl") # remove '#' at beginning of the line and run once to install this package
 
 # set working directory
-<<<<<<< Updated upstream
-#setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
-#setwd("~/GitHub/prodemos") # alternatively, when using GitHub one could use this to set the working directory
-=======
-setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
-setwd("~/GitHub/PRODEMOS") # if needed, change to the directory to the folder in which the R code and the life table folder is located
->>>>>>> Stashed changes
+# setwd("C:/Users/ron.handels/surfdrive/PhD/PAPERS/PRODEMOS cost-utility/model R") # if needed, change to the directory to the folder in which the R code and the life table folder is located
+# setwd("~/GitHub/prodemos") # alternatively, when using GitHub one could use this to set the working directory
+
 
 
 
@@ -34,7 +27,6 @@ cat("\014") # clear console
 
 # Load libraries
 library(heemod)
-library(readxl)
 
 
 
@@ -606,8 +598,16 @@ print(format(summary(res_mod_het)$sum_comb$res_comp$.icer[2], digits=10)) # "249
 
 ######################################## 5. VALIDATION ########################################
 
+# This part is for developers only and requires orginal Excel-based results
+
+
+
 ######################################## homogeneous ########################################
 
+# # install packages
+# install.packages("readxl") # remove '#' at beginning of the line and run once to install this package
+# packageVersion("readxl")
+# 
 # # homogeneous model type (i.e., single starting age and sex)
 # 
 # # in excel run scenario "compare to R"
