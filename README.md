@@ -1,47 +1,47 @@
 # Quick guide
 
-This GitHub repository provides the PRODEMOS open-source health-economic simulation model for estimating the cost-effectiveness of the PRODEMOS coach-supported mobile health intervention for primary prevention of dementia. 
+This GitHub repository provides the PRODEMOS open-source health-economic simulation model aimed to estimate the cost-effectiveness of the PRODEMOS coach-supported mobile health intervention for the primary prevention of dementia. 
 
-This readme only contains an installation guide. A description of the model and its input estimates can be found here: [placeholder for doi]
+A detailed description of the model and its input estimates can be found here: <https://doi.org/10.1016/j.tjpad.2026.100526>, which is linked to released version 1.0.0. 
 
-The branch "main" is for development and fune tuning before release, and is intended to be stable. The branch "develop" (if present) is for development, experimenting and exploring new features, it is not necessarily intended to be stable. Releases are stable versions often associated to specific applications of the model. 
+The branch "main" is for development and fune tuning before release and is intended to be stable. The branch "develop" (if present) is for developing and testing and is not necessarily intended to be stable. Releases are stable versions often associated to specific applications of the model. 
 
-# Installation tutorial R version (for inexperienced R/github users)
+Contact details of the main developer Ron Handels can be found here: <https://www.maastrichtuniversity.nl/r-handels>. 
 
-- Download files: go to https://github.com/ronhandels/prodemos, then click "Code" (green button) and then "Download ZIP" on PC. 
-- Unzip folder. 
-- Move unzipped folder to desired location on PC. 
-- Make sure to have R (https://cran.r-project.org/mirrors.html) and ideally RStudio (https://www.rstudio.com) installed. 
-- Open R file named "PRODEMOS open-source model.R" in R (or RStudio)
-- Install `heemod` by running the code `install.packages("heemod")` in R (this code is located under the heading `# MANUAL PREPARATION #`; to activate the code remove the `#` at the beginning of the line).
-- Install `readxl` (same as previous). 
-- Set the working directory to the file path where the unzipped folder is stored (this code is located under the heading `# MANUAL PREPARATION #`; change the code manually or alternatively in RStudio go to the menu "Session" then "Set Working Directory" then "Choose Directory..." and choose the location of the unzipped folder).
-- Run the code by sourcing it (in R go to the menu "File" then "Source R code..."; in RStudio go to the menu "Code" then "Source")
-- We recommend familiarizing with the description of the model using the details related to the releases described below.
+# Requirements
+
+The model script is written in R (version 4.3.1) and relies on the package 'heemod' (version 1.0.1). 
+
+# Installation tutorial
+
+- Make sure to have R installed (<https://cran.r-project.org/mirrors.html>) and possibly also RStudio installed (https://www.rstudio.com).
+- Download latest release (e.g., via <https://github.com/ronhandels/prodemos/releases/>). 
+- Extract ZIP to your desired folder. 
+- Open R file named "PRODEMOS open-source model.R" (stored in folder "R") in R or RStudio.
+- Follow the instruction at the beginning of the script to set the working directory and install packages.
+- Run the remainder of the script or source it with echo. The script loosely follows the DARTH coding framework <https://doi.org/10.1007/s40273-019-00837-x> in terms of headings and prefixes, contains in-line comments and loosely follows the TidyVerse styleguide <https://style.tidyverse.org/>. Results are printed in the console. 
 
 # Cite this work
 
 Name: PRODEMOS open-source model <https://github.com/ronhandels/prodemos>. 
 
-Citation: [placeholder for doi]
+Citation: <https://doi.org/10.1016/j.tjpad.2026.100526>
 
 # Version details
 
-## v1.0.0 (2025; released)
+## v1.0.0 (2026; released)
 
-[placeholder for version related to publication:]
-[placeholder: The PRODEMOS open-source model is an R version of the base case analysis presented in the publication: [placeholder for doi].] 
-[placeholder: Please note the R version does not reflect decreased utility and costs in the first year after a myocardial infarction or stroke event, and therefore results in different health-economic outcomes as reported in the publication. See publication supplementary material for details.]
+This version is linked to the publication entitled "Prevention of dementia using mobile phone applications (PRODEMOS) – a health-economic cost-utility analysis in people aged 55–75 years with low socio-economic status" <https://doi.org/10.1016/j.tjpad.2026.100526>. Please note this R version represents only an adapted version of the base case of the model. It does not reflect decreased utility and costs in the first year after a myocardial infarction or stroke event. Therefore, the outcomes of this R version differ from the outcomes reported in the publication. See publication supplementary material for details. 
 
-## v0.9.0 (2025; not released)
+Features: Adapted base case. 
 
-The PRODEMOS open-source model is an R version of the base case analysis generated by an Excel spreadsheet version of the model presented in the manuscript prepared for submission to a scientific journal. 
+Developers: 
+
+- Original model: Ron Handels, Anders Wimo, Linus Jonsson. 
+- R replication: Yunfei Li, Linus Jonsson, Ron Handels. 
 
 # Acknowledgment
 
-- We acknowledge the developers of the original model: Ron Handels, Anders Wimo, Linus Jonsson
-- We acknowledge the developers of the R replication: Yunfei Li, Linus Jonsson, Ron Handels
-- We acknowledge the PRODEMOS study collaborators: Ron Handels, Marieke Hoevenaar-Blom, Manshu Song, Carol Brayne, Eric Moll van Charante, Fiona E Matthews, Junfang Xu, Linus Jönsson, Nicola Coley, Rachael Brooks, Xuening Jian, Tingting Qin, Youxin Wang, Wei Wang, Edo Richard, Anders Wimo, PRODEMOS study group
-- We acknowledge all (future) contributors to the model.
-- We acknowledge the developers of the `dampack` (<https://github.com/DARTH-git> and <http://darthworkgroup.com>).
-
+- We acknowledge the PRODEMOS study collaborators Ron Handels, Marieke Hoevenaar-Blom, Manshu Song, Carol Brayne, Eric Moll van Charante, Fiona E Matthews, Junfang Xu, Linus Jönsson, Nicola Coley, Rachael Brooks, Xuening Jian, Tingting Qin, Youxin Wang, Wei Wang, Edo Richard, Anders Wimo, PRODEMOS study group.
+- We acknowledge all developers and contributors of the model. 
+- We acknowledge the developers of the `heemod` package. 
